@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <h3>Users</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @users.each do |user| %>
+            <% unless user == current_user %>
+              <tr>
+                <%= render user %>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

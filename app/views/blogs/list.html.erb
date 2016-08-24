@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Blogs</h1>
+<% unless @blogs.blank? %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Title</th>
+        <th colspan="4" ></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @blogs.each do |blog| %>
+        <tr>
+          <td><%= blog.user.email %>
+          <td><%= blog.title %></td>
+          <td><%= link_to 'Show', blog %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%else%>
+  <h3 align="center"> No Public Post</h3>
+<%end%>
+<br>
+
+<%#= link_to 'New Blog', new_blog_path %>
